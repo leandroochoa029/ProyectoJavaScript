@@ -75,19 +75,22 @@ function obtenerCotizacionDolar() {
     fetch("https://api.bluelytics.com.ar/v2/latest")
         .then(response => response.json())
         .then(data => {
-            const dolarOficial = data.oficial.value; // Cotización del dólar oficial
-            const dolarBlue = data.blue.value; // Cotización del dólar blue
+            const dolarOficial = data.oficial.value_avg; // Cotización del dólar oficial
+            const dolarBlue = data.blue.value_avg; // Cotización del dólar blue
 
-            // Actualiza los elementos HTML con la cotización
+            // Actualizar los elementos HTML con la cotización
             document.getElementById('dolarOficial').textContent = dolarOficial.toFixed(2);
             document.getElementById('dolarBlue').textContent = dolarBlue.toFixed(2);
+
+            // Llamar a la función para obtener el tipo de cambio seleccionado y calcular
+            obtenerTipoCambioYCalcular(dolarOficial, dolarBlue);
         })
         .catch(error => {
             console.error('Error al obtener cotización del dólar:', error);
         });
 }
 
-// Llama a la función para obtener la cotización del dólar cuando la página se carga
+// Llamar a la función para obtener la cotización del dólar cuando la página se carga
 window.addEventListener('load', obtenerCotizacionDolar);
 
 const calcularBtn = document.getElementById("calcularBtn");
