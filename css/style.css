@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/Montserrat-VariableFont_wght.ttf");
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #0e0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #20b375;
+}
+
+form {
+    background-color: #1f1f1f;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #20b375;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+button {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 15px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #20b375;
+}
+
+
+/* Estilo para el recuadro de detalle de impuestos */
+.detalle-impuestos {
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #fff;
+    display: none;
+    white-space: pre-line;
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+/* Estilo para mostrar el recuadro cuando sea necesario */
+.mostrar-detalle {
+    display: block;
+    opacity: 1; /* Hacer visible durante la transición */
+    animation: slideIn 0.5s ease-in-out; /* Animación de deslizamiento */
+}
+
+/* Estilo para los párrafos dentro del recuadro de detalle de impuestos */
+.detalle-impuestos p {
+    margin: 5px 0;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
+}
+
+/* Animación para deslizar hacia arriba */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+

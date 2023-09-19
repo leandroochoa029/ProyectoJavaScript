@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+
+    <h1>Calculadora de Impuestos</h1>
+
+<form>
+    <label for="valorProducto">Ingrese el valor del producto:</label>
+    <input type="number" id="valorProducto" step="0.01" required>
+    <br>
+
+    <label for="tipoCambioSelect">Tipo de Cambio:</label>
+    <select id="tipoCambioSelect" required>
+        <option value="dolar tarjeta">Dólar Tarjeta</option>
+        <option value="dolar qatar">Dólar Qatar</option>
+    </select>
+    <br>
+
+    <!-- Nuevo recuadro para mostrar los impuestos -->
+    <div id="impuestosDetalle" class="detalle-impuestos">
+        <p>Impuesto PAIS 30%</p>
+        <p>Impuesto Ganancias 45%</p>
+    </div>
+
+    <button type="button" id="calcularBtn">Calcular Impuestos</button>
+</form>
+
+<div id="mensajeError" class="error"></div>
+
+<p>El impuesto a pagar es: <span id="impuestoResultado"></span></p>
+<p>El valor total con impuestos es: <span id="totalConImpuestos"></span></p>
+
+<!-- Cotización del Dólar -->
+<div id="cotizacionDolar">
+    <h2>Cotización del Dólar</h2>
+    <p>Dólar Oficial: <span id="dolarOficial"></span></p>
+    <p>Dólar Blue: <span id="dolarBlue"></span></p>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="./main.js"></script>
+</body>
+
+</html>
